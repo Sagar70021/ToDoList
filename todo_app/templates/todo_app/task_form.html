@@ -1,0 +1,20 @@
+{% extends 'todo_app/task_base.html' %}
+{% block content %}
+
+<div class="header-bar">
+  <a href="{% url 'todo_app:list' %}">&#8592; Go Back</a>
+</div>
+
+<div class="card-body">
+  <form  action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% if task.id %}
+    <input class="button" type="submit" name="" value="Update">
+    {% else %}
+    <input class="button" type="submit" name="" value="Create">
+    {% endif %}
+</div>
+
+</form>
+{% endblock content %}

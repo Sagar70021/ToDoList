@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TODO List App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <style >
+      body{
+        font-family: 'Ubuntu', sans-serif;
+        padding-top: 20px;
+        font-weight: bold;
+        background-color: #303030;
+
+
+      }
+
+      h1,h2,h3,h4,h5,h6{
+        font-family: 'Raleway', sans-serif;
+      }
+      a,p{
+        color: yellow;
+      }
+
+      a:hover {
+        color: blue;
+     }
+
+      .container{
+        max-width: 500px;
+        margin: auto;
+        background-color: #217c8a;
+        -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+        box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+      }
+      .header-bar{
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        background: linear-gradient(100deg , #EEA390 0%, #EB796F 50%,#EB796F 100%);
+
+      }
+      .header-bar a{
+        text-decoration: none;
+        color: rgb(247,247,247);
+      }
+
+      .task-wrapper {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              background-color: #fff;
+              padding: 20px;
+              border-top: 1px solid #dfe4ea;
+              overflow: hidden;
+          }
+      .task-title{
+        display: flex;
+        padding : 20px;
+
+      }
+      .task-title a{
+        text-decoration: none;
+        color: #4b5156;
+        margin-left: 10px;
+      }
+      .task-complete-icon{
+        height: 20px;
+        width: 20px;
+        background-color: rgb(105,192,105);
+        border-radius: 50%;
+      }
+      .task-incomplete-icon{
+        height: 20px;
+        width: 20px;
+        background-color: rgb(222,20,40);
+        border-radius: 50%;
+      }
+      .delete-link{
+        text-decoration: none;
+        font-weight: 900;
+        color: #cf4949;
+        font-size: 22px;
+        line-height: 0;
+        padding: 20px 0;
+      }
+      #search-add-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+      #add-link{
+        color: #EB796F;
+        text-decoration: none;
+        font-size: 42px;
+        text-decoration: 1px 1px #81413b;
+      }
+      input[type=text],input[type=password],
+      textarea{
+        border: 2px solid #EB796F;
+        border-radius: 5px;
+        padding: 10px;
+        width: 90%;
+      }
+      label{
+        padding-top: 10px !important;
+        color: yellow;
+        display: block;
+      }
+      .button{
+        border: 2px solid #EB796F;
+        background-color: #FAFAFA;
+        color: black;
+
+        padding: 10px;
+        font-size: 15px;
+        font-weight: bolder;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .card-body{
+        padding: 20px;
+      }
+      .header {
+        padding:  20px;
+        margin-bottom: 20px;
+        text-align: center;
+        background: #217c8a;
+        color: black;
+
+        font-size: 50px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <!--nav class="navbar navbar-default navbar-static-top">
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="{% url 'todo_app:list' %}">TaskList</a></li>
+
+        <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+
+      </ul>
+    </nav-->
+    <div class="header">
+  <h2>ToDo List </h2>
+  </div>
+
+    <div class="container">
+      {% block content %}
+      {% endblock content %}
+    </div>
+
+  </body>
+  </html>
